@@ -7,37 +7,48 @@
   <title>Carmen Ayurveda | Seu corpo tem um ritmo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: "Braisetto";
+      src: url("braisetto-regular.otf") format("opentype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Braisetto";
+      src: url("braisetto-bold.otf") format("opentype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+
     :root {
-      --cream: #f7f2e9;
-      --paper: #fbf8f2;
-      --mist: #dce9df;
-      --aqua: #b9ded8;
-      --sky: #a9d0dc;
-      --peach: #f0cdb8;
-      --butter: #e5e7b9;
+      --cream: #FAF0E3;
+      --paper: #fffaf3;
       --surface-shadow: rgba(255, 255, 255, .82);
-      --deep-shadow: rgba(91, 77, 62, .16);
-      --ink: #3a2a1c;
-      --muted: #6b5342;
-      --sage: #5c7348;
-      --sage-dark: #3f5732;
-      --gold: #c4a15a;
-      --line: #e2d8c5;
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: Inter, system-ui, sans-serif;
+      --deep-shadow: rgba(80, 93, 64, .16);
+      --ink: #505D40;
+      --muted: #505D40;
+      --sage: #8F8854;
+      --sage-dark: #505D40;
+      --gold: #F89A00;
+      --terracotta: #D15515;
+      --line: rgba(80, 93, 64, .2);
+      --secondary-font: "Braisetto", "Segoe Script", cursive;
+      --primary-font: "Work Sans", system-ui, sans-serif;
       --content: 1160px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    section { content-visibility: auto; contain-intrinsic-size: 600px; }
+    section { position: relative; content-visibility: auto; contain-intrinsic-size: 600px; }
     body {
       margin: 0;
       color: var(--ink);
       background: var(--cream);
-      font-family: var(--sans);
+      font-family: var(--primary-font);
       line-height: 1.6;
     }
     a { color: inherit; }
@@ -50,11 +61,11 @@
       letter-spacing: .16em;
       text-transform: uppercase;
     }
-    h1, h2, h3, blockquote { font-family: var(--serif); font-weight: 600; line-height: .98; }
+    h1, h2, h3, blockquote { font-family: var(--primary-font); font-weight: 600; line-height: 1.08; }
     h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 720px; margin-bottom: 24px; font-size: clamp(3.55rem, 7vw, 6.7rem); letter-spacing: -.035em; }
-    h2 { margin-bottom: 22px; font-size: clamp(2.7rem, 5vw, 4.6rem); letter-spacing: -.025em; }
-    h3 { margin-bottom: 12px; font-size: 2rem; }
+    h1 { max-width: 720px; margin-bottom: 24px; font-size: clamp(3rem, 5.5vw, 5rem); letter-spacing: -.045em; }
+    h2 { margin-bottom: 22px; font-size: clamp(2.4rem, 4.1vw, 3.8rem); letter-spacing: -.035em; }
+    h3 { margin-bottom: 12px; font-size: 1.7rem; }
     .lede { max-width: 510px; color: var(--muted); font-size: 1.06rem; }
     .button {
       display: inline-flex;
@@ -64,14 +75,14 @@
       border: 1px solid transparent;
       border-radius: 999px;
       padding: 13px 22px;
-      font: 600 .84rem var(--sans);
+      font: 600 .84rem var(--primary-font);
       text-decoration: none;
       box-shadow: 5px 5px 11px var(--deep-shadow), -5px -5px 11px var(--surface-shadow);
       transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
     }
     .button:hover { transform: translateY(-2px); box-shadow: 7px 7px 14px var(--deep-shadow), -7px -7px 14px var(--surface-shadow); }
-    .button-primary { color: #fff; background: var(--sage); }
-    .button-primary:hover { background: var(--sage-dark); }
+    .button-primary { color: #fff; background: var(--sage-dark); }
+    .button-primary:hover { background: #414b34; }
     .button-quiet { color: var(--ink); border-color: var(--line); background: var(--cream); }
     .button-quiet:hover { background: var(--paper); }
     .button-light { color: var(--sage-dark); background: var(--paper); }
@@ -79,13 +90,37 @@
 
     header { border-bottom: 1px solid var(--line); }
     .nav { display: flex; min-height: 78px; align-items: center; justify-content: space-between; }
-    .brand { font: 600 1.55rem var(--serif); text-decoration: none; }
-    .brand span { color: var(--sage); }
+    .brand { display: inline-flex; align-items: center; text-decoration: none; }
+    .brand img { display: block; width: min(299px, 54.6vw); height: auto; }
     .nav-links { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: .78rem; }
     .nav-links a { text-decoration: none; }
     .nav-links a:hover { color: var(--sage-dark); }
+    .section-brand {
+      position: absolute;
+      z-index: 2;
+      top: 24px;
+      right: max(16px, calc((100% - var(--content)) / 2));
+      display: grid;
+      width: 68px;
+      height: 68px;
+      place-items: center;
+      color: var(--sage);
+      opacity: .62;
+      pointer-events: none;
+    }
+    .section-brand::before {
+      position: absolute;
+      inset: 9px;
+      border: 1px solid currentColor;
+      border-radius: 9px;
+      content: "";
+      opacity: .65;
+      transform: rotate(45deg);
+    }
+    .section-brand img { position: relative; width: 42px; height: 42px; object-fit: contain; }
+    .how .section-brand, .final-cta .section-brand { color: var(--gold); }
 
-    .hero { padding: clamp(76px, 11vw, 150px) 0 112px; }
+    .hero { padding: clamp(100px, 11vw, 150px) 0 112px; }
     .hero-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 6vw; align-items: center; }
     .hero-copy { position: relative; }
     .hero-copy::before {
@@ -101,65 +136,65 @@
       opacity: .58;
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .hero-aside { position: relative; min-height: 550px; margin-bottom: 130px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 30px; background: var(--mist); box-shadow: 18px 18px 36px rgba(91, 77, 62, .15), -14px -14px 32px rgba(255, 255, 255, .8), inset 1px 1px 0 rgba(255, 255, 255, .75); }
+    .hero-aside { position: relative; min-height: 550px; margin-bottom: 130px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 30px; background: var(--sage); box-shadow: 18px 18px 36px rgba(80, 93, 64, .15), -14px -14px 32px rgba(255, 255, 255, .8), inset 1px 1px 0 rgba(255, 255, 255, .75); }
     .hero-aside::before { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; content: ""; pointer-events: none; }
     .hero-photo { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; object-position: center center; }
-    .hero-aside::after { position: absolute; right: 22px; bottom: 20px; width: 110px; height: 110px; border: 16px solid rgba(185, 222, 216, .82); border-radius: 50%; content: ""; }
-    .hero-note { position: absolute; z-index: 2; right: 34px; bottom: 0; left: 34px; padding: 25px 28px; border: 1px solid rgba(255, 255, 255, .65); border-radius: 18px; background: rgba(251, 248, 242, .96); box-shadow: 10px 10px 22px rgba(91, 77, 62, .13), -8px -8px 18px rgba(255, 255, 255, .72), inset 1px 1px 0 rgba(255, 255, 255, .8); transform: translateY(60%); }
-    .hero-note p { max-width: 330px; margin-bottom: 12px; color: var(--muted); font-family: var(--serif); font-size: 2rem; line-height: 1.02; }
+    .hero-aside::after { position: absolute; right: 22px; bottom: 20px; width: 110px; height: 110px; border: 16px solid rgba(248, 154, 0, .76); border-radius: 50%; content: ""; }
+    .hero-note { position: absolute; z-index: 2; right: 34px; bottom: 0; left: 34px; padding: 25px 28px; border: 1px solid rgba(255, 255, 255, .65); border-radius: 18px; background: rgba(250, 240, 227, .96); box-shadow: 10px 10px 22px rgba(80, 93, 64, .13), -8px -8px 18px rgba(255, 255, 255, .72), inset 1px 1px 0 rgba(255, 255, 255, .8); transform: translateY(60%); }
+    .hero-note p { max-width: 330px; margin-bottom: 12px; color: var(--muted); font-family: var(--secondary-font); font-size: 1.75rem; line-height: 1.15; }
     .hero-note small { display: block; max-width: 280px; color: var(--muted); font-size: .76rem; }
-    .hero-chip { position: absolute; z-index: 2; top: 30px; left: 30px; padding: 9px 14px; border-radius: 999px; color: var(--sage-dark); background: rgba(251, 248, 242, .8); box-shadow: 4px 4px 9px rgba(91, 77, 62, .12), -4px -4px 9px rgba(255, 255, 255, .75); font-size: .7rem; font-weight: 600; }
+    .hero-chip { position: absolute; z-index: 2; top: 30px; left: 30px; padding: 9px 14px; border-radius: 999px; color: var(--sage-dark); background: rgba(250, 240, 227, .9); box-shadow: 4px 4px 9px rgba(80, 93, 64, .12), -4px -4px 9px rgba(255, 255, 255, .75); font-size: .7rem; font-weight: 600; }
 
     .pain { padding: 100px 0; border-top: 1px solid var(--line); background: var(--paper); }
     .pain-heading { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; align-items: start; margin-bottom: 52px; }
     .pain-heading h2 { max-width: 480px; }
     .pain-heading .lede { padding-top: 12px; }
-    .pain-list { display: grid; grid-template-columns: repeat(6, 1fr); padding: 18px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 24px; background: var(--cream); box-shadow: 12px 12px 24px rgba(91, 77, 62, .10), -10px -10px 22px rgba(255, 255, 255, .78); }
+    .pain-list { display: grid; grid-template-columns: repeat(6, 1fr); padding: 18px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 24px; background: var(--cream); box-shadow: 12px 12px 24px rgba(80, 93, 64, .10), -10px -10px 22px rgba(255, 255, 255, .78); }
     .pain-item { min-height: 208px; padding: 23px 18px 23px 0; border-right: 1px solid var(--line); }
     .pain-item + .pain-item { padding-left: 18px; }
     .pain-item:last-child { border-right: 0; }
     .pain-item p { margin-bottom: 0; color: var(--muted); font-size: .88rem; }
-    .pain-item strong { display: block; margin-bottom: 12px; color: var(--sage-dark); font: 600 1.6rem var(--serif); }
+    .pain-item strong { display: block; margin-bottom: 12px; color: var(--terracotta); font: 600 1.6rem var(--primary-font); }
 
     .offers { padding: 112px 0; }
     .offers-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 52px; }
     .offers-head h2 { max-width: 570px; margin-bottom: 0; }
     .offers-head p { max-width: 280px; margin-bottom: 5px; color: var(--muted); font-size: .88rem; }
     .offer-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; align-items: stretch; }
-    .offer-main { position: relative; display: flex; min-height: 390px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 34px; color: #fff; border-radius: 26px; background: var(--sage); }
-    .offer-main::after { position: absolute; right: -56px; bottom: -72px; width: 230px; height: 230px; border: 25px solid rgba(185, 222, 216, .72); border-radius: 50%; content: ""; }
+    .offer-main { position: relative; display: flex; min-height: 390px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 34px; color: #fff; border-radius: 26px; background: var(--sage-dark); }
+    .offer-main::after { position: absolute; right: -56px; bottom: -72px; width: 230px; height: 230px; border: 25px solid rgba(248, 154, 0, .72); border-radius: 50%; content: ""; }
     .offer-main > * { position: relative; z-index: 1; }
-    .offer-main h3 { max-width: 300px; font-size: 2.8rem; }
-    .offer-main p { max-width: 310px; color: #e5eadc; }
+    .offer-main h3 { max-width: 300px; font-size: 2.35rem; }
+    .offer-main p { max-width: 310px; color: var(--cream); }
     .offer-main .button { align-self: flex-start; }
     .offer-side { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .offer-small { min-height: 185px; padding: 28px; border: 1px solid rgba(255, 255, 255, .65); border-radius: 22px; background: var(--paper); box-shadow: 9px 9px 18px rgba(91, 77, 62, .10), -8px -8px 18px rgba(255, 255, 255, .78), inset 1px 1px 0 rgba(255, 255, 255, .6); }
-    .offer-small h3 { font-size: 1.9rem; }
+    .offer-small { min-height: 185px; padding: 28px; border: 1px solid rgba(255, 255, 255, .65); border-radius: 22px; background: var(--paper); box-shadow: 9px 9px 18px rgba(80, 93, 64, .10), -8px -8px 18px rgba(255, 255, 255, .78), inset 1px 1px 0 rgba(255, 255, 255, .6); }
+    .offer-small h3 { font-size: 1.55rem; }
     .offer-small p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
-    .offer-small:last-child { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 30px; background: #efe8d9; }
+    .offer-small:last-child { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 30px; background: #f2e4cf; }
     .offer-small:last-child h3 { margin-bottom: 0; }
     .offer-small:last-child p { max-width: 350px; }
 
-    .how { position: relative; overflow: hidden; padding: 100px 0; color: #fff; background: var(--ink); }
-    .how::after { position: absolute; right: -100px; bottom: -170px; width: 470px; height: 350px; border-radius: 48% 52% 0 0; background: var(--sky); content: ""; opacity: .85; }
+    .how { position: relative; overflow: hidden; padding: 100px 0; color: #fff; background: var(--sage-dark); }
+    .how::after { position: absolute; right: -100px; bottom: -170px; width: 470px; height: 350px; border-radius: 48% 52% 0 0; background: var(--terracotta); content: ""; opacity: .85; }
     .how .container { position: relative; z-index: 1; }
     .how-intro { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 60px; }
     .how h2 { max-width: 550px; margin-bottom: 0; }
     .how .eyebrow { color: var(--gold); }
-    .how-intro p { max-width: 260px; margin-bottom: 4px; color: #d8cbbb; font-size: .88rem; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid #796b5f; }
-    .step { min-height: 230px; padding: 24px 34px 24px 0; border-right: 1px solid #796b5f; }
+    .how-intro p { max-width: 260px; margin-bottom: 4px; color: var(--cream); font-size: .88rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(250, 240, 227, .45); }
+    .step { min-height: 230px; padding: 24px 34px 24px 0; border-right: 1px solid rgba(250, 240, 227, .45); }
     .step + .step { padding-left: 34px; }
     .step:last-child { border-right: 0; }
-    .step-number { display: block; margin-bottom: 38px; color: var(--gold); font: 600 1.4rem var(--serif); }
+    .step-number { display: block; margin-bottom: 38px; color: var(--gold); font: 600 1.4rem var(--primary-font); }
     .step h3 { font-size: 2.15rem; }
-    .step p { max-width: 270px; margin-bottom: 0; color: #d8cbbb; font-size: .88rem; }
+    .step p { max-width: 270px; margin-bottom: 0; color: var(--cream); font-size: .88rem; }
 
     .waitlist { display: grid; grid-template-columns: 1fr .8fr; gap: 10vw; padding: 112px 0; border-bottom: 1px solid var(--line); }
     .waitlist h2 { max-width: 570px; }
     .waitlist-copy p { max-width: 450px; color: var(--muted); }
     .waitlist-note { align-self: end; padding: 26px 0 0 28px; border-left: 1px solid var(--gold); }
-    .waitlist-note strong { display: block; margin-bottom: 12px; font: 600 2.1rem var(--serif); }
+    .waitlist-note strong { display: block; margin-bottom: 12px; font: 700 2.1rem var(--secondary-font); }
     .waitlist-note p { margin-bottom: 22px; color: var(--muted); font-size: .86rem; }
 
     .testimonials { padding: 112px 0; }
@@ -167,18 +202,18 @@
     .testimonials-head h2 { max-width: 450px; margin-bottom: 0; }
     .testimonials-head p { max-width: 235px; margin-bottom: 5px; color: var(--muted); font-size: .84rem; }
     .quotes { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 20px; align-items: stretch; }
-    .quote { display: flex; min-height: 275px; flex-direction: column; justify-content: space-between; padding: 30px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 22px; background: var(--paper); box-shadow: 10px 10px 20px rgba(91, 77, 62, .10), -8px -8px 18px rgba(255, 255, 255, .78); }
-    .quote:first-child { min-height: 335px; background: #eee6d7; }
+    .quote { display: flex; min-height: 275px; flex-direction: column; justify-content: space-between; padding: 30px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 22px; background: var(--paper); box-shadow: 10px 10px 20px rgba(80, 93, 64, .10), -8px -8px 18px rgba(255, 255, 255, .78); }
+    .quote:first-child { min-height: 335px; background: #f2e4cf; }
     blockquote { margin: 0; font-size: clamp(1.8rem, 2.8vw, 2.7rem); }
-    .quote:not(:first-child) blockquote { font-size: 2rem; }
+    .quote:not(:first-child) blockquote { font-size: 1.65rem; }
     .quote footer { color: var(--muted); font-size: .75rem; }
     .quote footer strong { display: block; margin-bottom: 3px; color: var(--ink); font-weight: 600; }
     .whatsapp-placeholder { display: flex; min-height: 112px; align-items: center; justify-content: center; margin-top: 18px; border: 1px dashed var(--sage); color: var(--sage-dark); font-size: .72rem; text-align: center; }
 
-    .final-cta { padding: 80px 0; color: #fff; background: var(--sage); }
+    .final-cta { padding: 80px 0; color: #fff; background: var(--sage-dark); }
     .final-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
     .final-cta h2 { max-width: 650px; margin-bottom: 0; font-size: clamp(2.8rem, 5vw, 5rem); }
-    .final-cta p { max-width: 250px; margin-bottom: 20px; color: #e5eadc; font-size: .88rem; }
+    .final-cta p { max-width: 250px; margin-bottom: 20px; color: var(--cream); font-size: .88rem; }
 
     footer.site-footer { padding: 28px 0; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .74rem; }
@@ -198,7 +233,7 @@
       .offer-layout { grid-template-columns: 1fr; }
       .how-intro, .offers-head, .testimonials-head, .final-cta-inner { align-items: start; flex-direction: column; }
       .steps { grid-template-columns: 1fr; }
-      .step, .step + .step { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid #796b5f; }
+      .step, .step + .step { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid rgba(250, 240, 227, .45); }
       .step:last-child { border-bottom: 0; }
       .step-number { margin-bottom: 20px; }
       .quotes { grid-template-columns: 1fr 1fr; }
@@ -208,23 +243,23 @@
     @media (max-width: 560px) {
       .container { width: min(calc(100% - 32px), var(--content)); }
       .nav { min-height: 64px; }
-      .brand { font-size: 1.35rem; }
+      .brand img { width: clamp(130px, calc(100vw - 194px), 247px); }
       .nav-links { gap: 0; }
       .nav-links .button { min-height: 40px; padding: 8px 12px; font-size: .68rem; }
       h1 { max-width: 10ch; margin-bottom: 20px; font-size: clamp(2.95rem, 15vw, 4.2rem); }
       h2 { font-size: clamp(2.45rem, 12vw, 3.5rem); }
       .lede { font-size: .96rem; }
-      .hero { padding: 58px 0 70px; }
+      .hero { padding: 98px 0 70px; }
       .hero-actions { align-items: stretch; flex-direction: column; margin-top: 26px; }
       .hero-actions .button { width: 100%; }
-      .hero-aside { min-height: 390px; margin-bottom: 100px; border-radius: 24px; box-shadow: 10px 10px 22px rgba(91, 77, 62, .12), -8px -8px 20px rgba(255, 255, 255, .72), inset 1px 1px 0 rgba(255, 255, 255, .7); }
+      .hero-aside { min-height: 390px; margin-bottom: 100px; border-radius: 24px; box-shadow: 10px 10px 22px rgba(80, 93, 64, .12), -8px -8px 20px rgba(255, 255, 255, .72), inset 1px 1px 0 rgba(255, 255, 255, .7); }
       .hero-aside::after { right: 14px; bottom: 18px; width: 84px; height: 84px; border-width: 12px; }
       .hero-chip { top: 20px; left: 20px; }
       .hero-note { right: 20px; bottom: 0; left: 20px; padding: 20px; transform: translateY(60%); }
       .hero-note p { font-size: 1.7rem; }
       .pain, .offers, .how, .waitlist, .testimonials { padding: 64px 0; }
       .pain-list, .offer-side, .quotes { grid-template-columns: 1fr; }
-      .pain-list { padding: 12px; box-shadow: 7px 7px 15px rgba(91, 77, 62, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
+      .pain-list { padding: 12px; box-shadow: 7px 7px 15px rgba(80, 93, 64, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
       .pain-item, .pain-item + .pain-item { min-height: auto; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .pain-item:last-child { border-bottom: 0; }
       .pain-item:nth-child(3) { padding-left: 0; }
@@ -235,7 +270,7 @@
       .offer-small:last-child h3 { margin-bottom: 12px; }
       .quote:first-child { grid-column: auto; }
       .quote, .quote:first-child { min-height: 250px; }
-      .quote { padding: 24px; box-shadow: 7px 7px 15px rgba(91, 77, 62, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
+      .quote { padding: 24px; box-shadow: 7px 7px 15px rgba(80, 93, 64, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
       blockquote, .quote:not(:first-child) blockquote { font-size: 1.8rem; }
       .final-cta { padding: 64px 0; }
       .final-cta h2 { font-size: clamp(2.6rem, 12vw, 3.8rem); }
@@ -253,7 +288,9 @@
 <body>
   <header>
     <nav class="nav container" aria-label="Navegação principal">
-      <a class="brand" href="#inicio">Carmen <span>Ayurveda</span></a>
+      <a class="brand" href="#inicio" aria-label="Carmen Medeiros Ayurveda — início">
+        <img src="carmen-logo-horizontal.png" alt="Carmen Medeiros Ayurveda">
+      </a>
       <div class="nav-links">
         <a href="#como-funciona">Como funciona</a>
         <a href="#depoimentos">Histórias reais</a>
@@ -264,6 +301,7 @@
 
   <main>
     <section class="hero" id="inicio">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="hero-grid container">
         <div class="hero-copy">
           <p class="eyebrow">Ayurveda para a vida real</p>
@@ -286,6 +324,7 @@
     </section>
 
     <section class="pain" id="sinais">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="container">
         <div class="pain-heading">
           <div>
@@ -306,6 +345,7 @@
     </section>
 
     <section class="offers" id="ofertas">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="container">
         <div class="offers-head">
           <div>
@@ -329,6 +369,7 @@
     </section>
 
     <section class="how" id="como-funciona">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="container">
         <div class="how-intro">
           <div><p class="eyebrow">Sem enrolação</p><h2>Três passos para começar a entender o seu corpo.</h2></div>
@@ -343,11 +384,13 @@
     </section>
 
     <section class="waitlist" id="pra-ser-feliz">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="waitlist-copy container"><div><p class="eyebrow">Lista de espera</p><h2>Pra ser feliz, o corpo também precisa caber na vida.</h2><p>“Pra ser feliz” é uma lista de espera para os próximos conteúdos, encontros e novidades da Carmen Ayurveda.</p><a class="button button-primary" href="https://www.subscribepage.com/increvasenalistadeespera">Entrar na lista de espera</a></div></div>
       <aside class="waitlist-note"><strong>Um lugar para chegar.</strong><p>Sem promessa de perfeição. Sem mais uma cobrança. Só um convite para se conhecer com mais gentileza.</p><a href="https://www.instagram.com/carmen.ayurveda/">Acompanhar no Instagram →</a></aside>
     </section>
 
     <section class="testimonials" id="depoimentos">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="container">
         <div class="testimonials-head"><div><p class="eyebrow">Depois de se ouvir</p><h2>Pequenas mudanças. Diferenças que aparecem no dia.</h2></div><p>Relatos provisórios para o piloto. Os prints de WhatsApp entram aqui quando chegarem.</p></div>
         <div class="quotes">
@@ -359,6 +402,7 @@
     </section>
 
     <section class="final-cta">
+      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="final-cta-inner container"><h2>Talvez o próximo passo não seja tentar mais. Seja se conhecer melhor.</h2><div><p>Comece pelo questionário gratuito e leve suas respostas para uma conversa sem compromisso.</p><a class="button button-light" href="https://forms.gle/haGHXvj8XMGgfbYB7">Descobrir meu dosha</a></div></div>
     </section>
   </main>
