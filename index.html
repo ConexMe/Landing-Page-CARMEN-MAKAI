@@ -106,11 +106,11 @@
       transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
     }
     .button:hover { transform: translateY(-2px); box-shadow: 7px 7px 14px var(--deep-shadow), -7px -7px 14px var(--surface-shadow); }
-    .button-primary { color: #fff; background: var(--sage-dark); }
-    .button-primary:hover { background: #414b34; }
+    .button-primary { color: var(--sage-dark); background: var(--cream); border-color: var(--sage-dark); }
+    .button-primary:hover { color: var(--sage-dark); background: var(--paper); }
     .button-quiet { color: var(--ink); border-color: var(--line); background: var(--cream); }
     .button-quiet:hover { background: var(--paper); }
-    .button-light { color: var(--sage-dark); background: var(--paper); }
+    .button-light { color: var(--sage-dark); background: var(--cream); border-color: var(--sage-dark); }
     .button-light:hover { background: #fff; }
 
     header { border-bottom: 1px solid var(--line); }
@@ -175,45 +175,44 @@
     .pain-heading h2 { max-width: 480px; }
     .pain-heading .lede { padding-top: 12px; }
     .pain-list { display: grid; grid-template-columns: repeat(6, 1fr); padding: 18px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 24px; background: var(--cream); box-shadow: 12px 12px 24px rgba(80, 93, 64, .10), -10px -10px 22px rgba(255, 255, 255, .78); }
-    .pain-item { min-height: 208px; padding: 23px 18px 23px 0; border-right: 1px solid var(--line); }
+    .pain-item { min-height: 170px; padding: 23px 18px 23px 0; border-right: 1px solid var(--line); }
     .pain-item + .pain-item { padding-left: 18px; }
     .pain-item:last-child { border-right: 0; }
     .pain-item p { margin-bottom: 0; color: var(--muted); font-size: .88rem; }
-    .pain-item strong { display: block; margin-bottom: 12px; color: var(--terracotta); font: 600 1.6rem var(--primary-font); }
 
     .offers { padding: 112px 0; }
     .offers-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 52px; }
     .offers-head h2 { max-width: 570px; margin-bottom: 0; }
     .offers-head p { max-width: 280px; margin-bottom: 5px; color: var(--muted); font-size: .88rem; }
-    .offer-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; align-items: stretch; }
-    .offer-main { position: relative; display: flex; min-height: 390px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 34px; color: #fff; border-radius: 26px; background: var(--sage-dark); }
-    .offer-main::after { position: absolute; right: -56px; bottom: -72px; width: 230px; height: 230px; border: 25px solid rgba(248, 154, 0, .72); border-radius: 50%; content: ""; }
+    .offer-layout { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: 20px; align-items: stretch; }
+    .offer-main { position: relative; display: flex; min-height: 390px; flex-direction: column; justify-content: flex-start; gap: 22px; overflow: hidden; padding: 34px; color: var(--sage-dark); border: 2px solid var(--sage-dark); border-radius: 26px; background: var(--cream); box-shadow: 12px 12px 24px rgba(80, 93, 64, .16), -8px -8px 18px rgba(255, 255, 255, .7); }
+    .offer-main::after { position: absolute; right: -56px; bottom: -72px; width: 230px; height: 230px; border: 25px solid rgba(248, 154, 0, .42); border-radius: 50%; content: ""; }
     .offer-main > * { position: relative; z-index: 1; }
-    .offer-main h3 { max-width: 300px; font-size: 2.35rem; }
-    .offer-main p { max-width: 310px; color: var(--cream); }
+    .offer-main h3 { max-width: 300px; font-size: 2.65rem; }
+    .offer-main p { max-width: 310px; color: var(--sage-dark); }
     .offer-main .button { align-self: flex-start; }
     .offer-side { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .offer-small { min-height: 185px; padding: 28px; border: 1px solid rgba(255, 255, 255, .65); border-radius: 22px; background: var(--paper); box-shadow: 9px 9px 18px rgba(80, 93, 64, .10), -8px -8px 18px rgba(255, 255, 255, .78), inset 1px 1px 0 rgba(255, 255, 255, .6); }
+    .offer-small { min-height: 185px; padding: 28px; border: 1px solid rgba(80, 93, 64, .18); border-radius: 22px; background: var(--paper); box-shadow: 5px 5px 12px rgba(80, 93, 64, .07), -5px -5px 12px rgba(255, 255, 255, .65); }
     .offer-small h3 { font-size: 1.55rem; }
     .offer-small p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
-    .offer-small:last-child { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 30px; background: #f2e4cf; }
+    .offer-small:last-child { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 16px; background: #f2e4cf; }
     .offer-small:last-child h3 { margin-bottom: 0; }
     .offer-small:last-child p { max-width: 350px; }
 
-    .how { position: relative; overflow: hidden; padding: 100px 0; color: #fff; background: var(--sage-dark); }
-    .how::after { position: absolute; right: -100px; bottom: -170px; width: 470px; height: 350px; border-radius: 48% 52% 0 0; background: var(--terracotta); content: ""; opacity: .85; }
+    .how { position: relative; overflow: hidden; padding: 100px 0; color: var(--sage-dark); background: var(--paper); }
+    .how::after { position: absolute; right: -100px; bottom: -170px; width: 470px; height: 350px; border-radius: 48% 52% 0 0; background: var(--terracotta); content: ""; opacity: .18; }
     .how .container { position: relative; z-index: 1; }
     .how-intro { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 60px; }
     .how h2 { max-width: 550px; margin-bottom: 0; }
-    .how .eyebrow { color: var(--gold); }
-    .how-intro p { max-width: 260px; margin-bottom: 4px; color: var(--cream); font-size: .88rem; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(250, 240, 227, .45); }
-    .step { min-height: 230px; padding: 24px 34px 24px 0; border-right: 1px solid rgba(250, 240, 227, .45); }
+    .how .eyebrow { color: var(--sage-dark); }
+    .how-intro p { max-width: 260px; margin-bottom: 4px; color: var(--sage-dark); font-size: .88rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .step { min-height: 230px; padding: 24px 34px 24px 0; border-right: 1px solid var(--line); }
     .step + .step { padding-left: 34px; }
     .step:last-child { border-right: 0; }
-    .step-number { display: block; margin-bottom: 38px; color: var(--gold); font: 600 1.4rem var(--primary-font); }
+    .step-number { display: block; margin-bottom: 38px; color: var(--terracotta); font: 600 1.4rem var(--primary-font); }
     .step h3 { font-size: 2.15rem; }
-    .step p { max-width: 270px; margin-bottom: 0; color: var(--cream); font-size: .88rem; }
+    .step p { max-width: 270px; margin-bottom: 0; color: var(--sage-dark); font-size: .88rem; }
 
     .waitlist { display: grid; grid-template-columns: 1fr .8fr; gap: 10vw; padding: 112px 0; border-bottom: 1px solid var(--line); }
     .waitlist h2 { max-width: 570px; }
@@ -228,17 +227,17 @@
     .testimonials-head p { max-width: 235px; margin-bottom: 5px; color: var(--muted); font-size: .84rem; }
     .quotes { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 20px; align-items: stretch; }
     .quote { display: flex; min-height: 275px; flex-direction: column; justify-content: space-between; padding: 30px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 22px; background: var(--paper); box-shadow: 10px 10px 20px rgba(80, 93, 64, .10), -8px -8px 18px rgba(255, 255, 255, .78); }
-    .quote:first-child { min-height: 335px; background: #f2e4cf; }
-    blockquote { margin: 0; font-size: clamp(1.8rem, 2.8vw, 2.7rem); }
-    .quote:not(:first-child) blockquote { font-size: 1.65rem; }
+    .quote:first-child { min-height: 275px; background: #f2e4cf; }
+    blockquote { margin: 0; font-size: 1.2rem; line-height: 1.5; }
+    .quote:not(:first-child) blockquote { font-size: 1.2rem; }
     .quote footer { color: var(--muted); font-size: .75rem; }
     .quote footer strong { display: block; margin-bottom: 3px; color: var(--ink); font-weight: 600; }
-    .whatsapp-placeholder { display: flex; min-height: 112px; align-items: center; justify-content: center; margin-top: 18px; border: 1px dashed var(--sage); color: var(--sage-dark); font-size: .72rem; text-align: center; }
 
-    .final-cta { padding: 80px 0; color: #fff; background: var(--sage-dark); }
+
+    .final-cta { padding: 80px 0; color: var(--sage-dark); background: var(--cream); }
     .final-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
     .final-cta h2 { max-width: 650px; margin-bottom: 0; font-size: clamp(2.8rem, 5vw, 5rem); }
-    .final-cta p { max-width: 250px; margin-bottom: 20px; color: var(--cream); font-size: .88rem; }
+    .final-cta p { max-width: 250px; margin-bottom: 20px; color: var(--sage-dark); font-size: .88rem; }
 
     footer.site-footer { padding: 28px 0; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .74rem; }
@@ -258,7 +257,7 @@
       .offer-layout { grid-template-columns: 1fr; }
       .how-intro, .offers-head, .testimonials-head, .final-cta-inner { align-items: start; flex-direction: column; }
       .steps { grid-template-columns: 1fr; }
-      .step, .step + .step { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid rgba(250, 240, 227, .45); }
+      .step, .step + .step { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .step:last-child { border-bottom: 0; }
       .step-number { margin-bottom: 20px; }
       .quotes { grid-template-columns: 1fr 1fr; }
@@ -291,12 +290,12 @@
       .offer-main { min-height: 340px; padding: 26px; }
       .offer-main h3 { font-size: 2.45rem; }
       .offer-small { min-height: auto; padding: 24px; }
-      .offer-small:last-child { display: block; }
+      .offer-small:last-child { display: flex; }
       .offer-small:last-child h3 { margin-bottom: 12px; }
       .quote:first-child { grid-column: auto; }
       .quote, .quote:first-child { min-height: 250px; }
       .quote { padding: 24px; box-shadow: 7px 7px 15px rgba(80, 93, 64, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
-      blockquote, .quote:not(:first-child) blockquote { font-size: 1.8rem; }
+      blockquote, .quote:not(:first-child) blockquote { font-size: 1.2rem; }
       .final-cta { padding: 64px 0; }
       .final-cta h2 { font-size: clamp(2.6rem, 12vw, 3.8rem); }
       .final-cta .button { width: 100%; }
@@ -333,7 +332,7 @@
           <h1>Seu corpo tem um ritmo. Vamos descobrir qual é o seu?</h1>
           <p class="lede">Você não precisa de mais uma lista de proibições. Precisa entender o que combina com a sua constituição para comer, digerir e viver com mais clareza.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://forms.gle/haGHXvj8XMGgfbYB7">Fazer o questionário grátis</a>
+            <a class="button button-primary" href="https://forms.gle/haGHXvj8XMGgfbYB7">Descobrir meu dosha</a>
             <a class="button button-quiet" href="https://wa.me/5548999118007">Conversar pelo WhatsApp</a>
           </div>
         </div>
@@ -359,18 +358,17 @@
           <p class="lede">A alimentação mudou, os hábitos também. Mesmo assim, o corpo continua mandando sinais que parecem não ter explicação.</p>
         </div>
         <div class="pain-list">
-          <article class="pain-item"><strong>01</strong><p>“Eu como melhor, mas continuo estufada depois de quase toda refeição.”</p></article>
-          <article class="pain-item"><strong>02</strong><p>“Acordo cansada e passo o dia tentando alcançar uma energia que não vem.”</p></article>
-          <article class="pain-item"><strong>03</strong><p>“Minha digestão muda, meu humor muda, e eu nunca sei o que esperar.”</p></article>
-          <article class="pain-item"><strong>04</strong><p>“Já cortei açúcar, glúten e mil coisas. Ainda assim, nada parece sustentável.”</p></article>
-          <article class="pain-item"><strong>05</strong><p>“Tenho tanta informação sobre saúde que fiquei sem saber em quem confiar.”</p></article>
-          <article class="pain-item"><strong>06</strong><p>“Quero cuidar de mim sem transformar cada refeição em uma prova.”</p></article>
+          <article class="pain-item"><p>“Eu como melhor, mas continuo estufada depois de quase toda refeição.”</p></article>
+          <article class="pain-item"><p>“Acordo cansada e passo o dia tentando alcançar uma energia que não vem.”</p></article>
+          <article class="pain-item"><p>“Minha digestão muda, meu humor muda, e eu nunca sei o que esperar.”</p></article>
+          <article class="pain-item"><p>“Já cortei açúcar, glúten e mil coisas. Ainda assim, nada parece sustentável.”</p></article>
+          <article class="pain-item"><p>“Tenho tanta informação sobre saúde que fiquei sem saber em quem confiar.”</p></article>
+          <article class="pain-item"><p>“Quero cuidar de mim sem transformar cada refeição em uma prova.”</p></article>
         </div>
       </div>
     </section>
 
     <section class="offers" id="ofertas">
-      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="container">
         <div class="offers-head">
           <div>
@@ -387,14 +385,13 @@
           <div class="offer-side">
             <article class="offer-small"><h3>Questionário doshas</h3><p>Um primeiro passo gratuito para começar a observar seu padrão individual.</p></article>
             <article class="offer-small"><h3>Conteúdo que nutre</h3><p>Receitas, rituais e reflexões para levar o Ayurveda para além da teoria.</p></article>
-            <article class="offer-small"><div><h3>Para começar hoje</h3><p>Prepare um Chai Indiano e experimente um pequeno ritual de presença.</p></div><a class="button button-quiet" href="https://docs.google.com/document/d/1vb4adVkkm36jr7URohzV7HXtxXqSRUnUgLnJ7C9iNTg/edit?usp=sharing">Ver receita</a></article>
+            <article class="offer-small"><div><h3>Para começar hoje</h3><p>Prepare um Chai Indiano e experimente um pequeno ritual de presença.</p></div><a class="button button-quiet" href="https://docs.google.com/document/d/1vb4adVkkm36jr7URohzV7HXtxXqSRUnUgLnJ7C9iNTg/view">Ver receita</a></article>
           </div>
         </div>
       </div>
     </section>
 
     <section class="how" id="como-funciona">
-      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="container">
         <div class="how-intro">
           <div><p class="eyebrow">Sem enrolação</p><h2>Três passos para começar a entender o seu corpo.</h2></div>
@@ -409,7 +406,6 @@
     </section>
 
     <section class="waitlist" id="pra-ser-feliz">
-      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="waitlist-copy container"><div><p class="eyebrow">Lista de espera</p><h2>Pra ser feliz, o corpo também precisa caber na vida.</h2><p>“Pra ser feliz” é uma lista de espera para os próximos conteúdos, encontros e novidades da Carmen Ayurveda.</p><a class="button button-primary" href="https://www.subscribepage.com/increvasenalistadeespera">Entrar na lista de espera</a></div></div>
       <aside class="waitlist-note"><strong>Um lugar para chegar.</strong><p>Sem promessa de perfeição. Sem mais uma cobrança. Só um convite para se conhecer com mais gentileza.</p><a href="https://www.instagram.com/carmen.ayurveda/">Acompanhar no Instagram →</a></aside>
     </section>
@@ -419,7 +415,7 @@
       <div class="container">
         <div class="testimonials-head"><div><p class="eyebrow">Depois de se ouvir</p><h2>Pequenas mudanças. Diferenças que aparecem no dia.</h2></div><p>Relatos provisórios para o piloto. Os prints de WhatsApp entram aqui quando chegarem.</p></div>
         <div class="quotes">
-          <article class="quote"><blockquote>“Pela primeira vez eu parei de brigar com a comida. Depois do questionário, comecei a perceber que o problema não era falta de força de vontade. Era insistir em uma rotina que não era minha.”</blockquote><footer><strong>Marina, 34</strong>Após 3 consultas</footer><div class="whatsapp-placeholder">PLACEHOLDER<br>print do WhatsApp</div></article>
+          <article class="quote"><blockquote>“Pela primeira vez eu parei de brigar com a comida. Depois do questionário, comecei a perceber que o problema não era falta de força de vontade. Era insistir em uma rotina que não era minha.”</blockquote><footer><strong>Marina, 34</strong>Após 3 consultas</footer></article>
           <article class="quote"><blockquote>“A conversa foi muito mais prática do que eu imaginava. Saí com duas mudanças possíveis e minha digestão já respondeu na primeira semana.”</blockquote><footer><strong>Luiza, 29</strong>Depois do questionário doshas</footer></article>
           <article class="quote"><blockquote>“Eu achava que precisava mudar tudo de uma vez. O acompanhamento me ajudou a criar um ritmo que consigo manter mesmo nos dias corridos.”</blockquote><footer><strong>Renata, 41</strong>Após 4 semanas de acompanhamento</footer></article>
         </div>
@@ -427,13 +423,12 @@
     </section>
 
     <section class="final-cta">
-      <span class="section-brand" aria-hidden="true"><img src="carmen-emblema.png" alt=""></span>
       <div class="final-cta-inner container"><h2>Talvez o próximo passo não seja tentar mais. Seja se conhecer melhor.</h2><div><p>Comece pelo questionário gratuito e leve suas respostas para uma conversa sem compromisso.</p><a class="button button-light" href="https://forms.gle/haGHXvj8XMGgfbYB7">Descobrir meu dosha</a></div></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner container"><span>© Carmen Ayurveda · conteúdo piloto</span><div class="footer-social"><a href="https://www.instagram.com/carmen.ayurveda/">Instagram</a><a href="https://wa.me/5548999118007">WhatsApp</a><a href="https://www.instagram.com/reel/DB1cBsyRAjw/">Receitas</a></div></div>
+    <div class="footer-inner container"><span>© Carmen Ayurveda · conteúdo piloto</span><div class="footer-social"><a href="https://www.instagram.com/carmen.ayurveda/">Instagram</a><a href="https://wa.me/5548999118007">WhatsApp</a><a href="https://www.instagram.com/reel/DB1cBsyRAjw/">Reel de receita</a></div></div>
   </footer>
 </body>
 </html>
