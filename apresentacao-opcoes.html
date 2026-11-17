@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apresentação das três propostas de landing page para Carmen Medeiros Ayurveda.">
+  <title>Carmen Ayurveda | Apresentação de propostas</title>
+  <style>
+    @font-face { font-family: "Work Sans"; src: url("worksans-regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Work Sans"; src: url("worksans-medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Work Sans"; src: url("worksans-semibold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+
+    :root { --ink: #293d34; --paper: #faf8f1; --sand: #f1eee5; --clay: #9a5a3e; --line: rgba(41, 61, 52, .18); }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body { min-width: 320px; margin: 0; color: var(--ink); font-family: "Work Sans", Arial, sans-serif; }
+    button { font: inherit; }
+
+    .presentation-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid var(--line); background: rgba(250, 248, 241, .94); backdrop-filter: blur(14px); }
+    .header-inner { display: flex; width: min(calc(100% - 48px), 1280px); min-height: 92px; margin: 0 auto; align-items: center; justify-content: space-between; gap: 30px; }
+    .intro { display: flex; align-items: center; gap: 15px; }
+    .intro img { width: 44px; height: 44px; object-fit: contain; }
+    .intro p, .intro strong { display: block; margin: 0; }
+    .intro p { margin-bottom: 3px; color: var(--clay); font-size: .63rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+    .intro strong { font-size: .95rem; font-weight: 600; }
+    .option-tabs { display: flex; gap: 8px; }
+    .option-tab { min-height: 38px; border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; color: var(--ink); background: transparent; cursor: pointer; font-size: .72rem; font-weight: 600; letter-spacing: .04em; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+    .option-tab:hover, .option-tab[aria-selected="true"] { border-color: var(--ink); color: #fff; background: var(--ink); }
+
+    .stage { position: relative; min-height: calc(100dvh - 92px); }
+    .preview { display: none; position: relative; min-height: calc(100dvh - 92px); background: #e9e6dc; }
+    .preview.is-active { display: block; }
+    .preview iframe { display: block; width: 100%; height: calc(100dvh - 92px); border: 0; background: white; }
+    .watermark { position: absolute; z-index: 2; right: 22px; bottom: 20px; border: 1px solid rgba(255,255,255,.36); border-radius: 99px; padding: 8px 12px; color: rgba(255,255,255,.9); background: rgba(41,61,52,.76); box-shadow: 0 4px 16px rgba(0,0,0,.14); font-size: .62rem; font-weight: 500; letter-spacing: .16em; pointer-events: none; text-transform: uppercase; backdrop-filter: blur(10px); }
+    .watermark span { opacity: .68; }
+    .frame-note { position: absolute; z-index: 2; bottom: 21px; left: 22px; margin: 0; color: rgba(41,61,52,.68); font-size: .62rem; letter-spacing: .04em; pointer-events: none; }
+
+    @media (max-width: 680px) {
+      .header-inner { width: min(calc(100% - 28px), 1280px); min-height: 122px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 10px; }
+      .intro img { width: 35px; height: 35px; }
+      .intro strong { font-size: .82rem; }
+      .option-tabs { width: 100%; }
+      .option-tab { flex: 1; padding-inline: 8px; font-size: .64rem; }
+      .stage, .preview { min-height: calc(100dvh - 122px); }
+      .preview iframe { height: calc(100dvh - 122px); }
+      .watermark { right: 12px; bottom: 14px; padding: 7px 10px; font-size: .57rem; }
+      .frame-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="presentation-header">
+    <div class="header-inner">
+      <div class="intro">
+        <img src="carmen-emblema.png" alt="">
+        <div>
+          <p>Apresentação para cliente</p>
+          <strong>Carmen Medeiros Ayurveda</strong>
+        </div>
+      </div>
+      <nav class="option-tabs" aria-label="Selecionar proposta">
+        <button class="option-tab" type="button" role="tab" id="tab-1" aria-controls="option-1" aria-selected="true" data-option="option-1">Opção 1</button>
+        <button class="option-tab" type="button" role="tab" id="tab-2" aria-controls="option-2" aria-selected="false" data-option="option-2">Opção 2</button>
+        <button class="option-tab" type="button" role="tab" id="tab-3" aria-controls="option-3" aria-selected="false" data-option="option-3">Opção 3</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="stage">
+    <section class="preview is-active" id="option-1" role="tabpanel" aria-labelledby="tab-1">
+      <iframe src="index.html" title="Opção 1 — Carmen Medeiros Ayurveda" loading="eager"></iframe>
+      <p class="frame-note">Role dentro da prévia para conhecer toda a página.</p>
+      <span class="watermark">Opção 1 <span>· original</span></span>
+    </section>
+    <section class="preview" id="option-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+      <iframe data-src="opcao-2-ajustada.html" title="Opção 2 — Carmen Medeiros Ayurveda" loading="lazy"></iframe>
+      <p class="frame-note">Role dentro da prévia para conhecer toda a página.</p>
+      <span class="watermark">Opção 2 <span>· acolhedora</span></span>
+    </section>
+    <section class="preview" id="option-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+      <iframe data-src="opcao-3-ajustada.html" title="Opção 3 — Carmen Medeiros Ayurveda" loading="lazy"></iframe>
+      <p class="frame-note">Role dentro da prévia para conhecer toda a página.</p>
+      <span class="watermark">Opção 3 <span>· editorial</span></span>
+    </section>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.option-tab');
+    const previews = document.querySelectorAll('.preview');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const selectedId = tab.dataset.option;
+        tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+        previews.forEach((preview) => {
+          const isSelected = preview.id === selectedId;
+          preview.classList.toggle('is-active', isSelected);
+          preview.hidden = !isSelected;
+          if (isSelected) {
+            const frame = preview.querySelector('iframe[data-src]');
+            if (frame && !frame.getAttribute('src')) frame.src = frame.dataset.src;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
