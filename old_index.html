@@ -179,6 +179,7 @@
     .pain-item + .pain-item { padding-left: 18px; }
     .pain-item:last-child { border-right: 0; }
     .pain-item p { margin-bottom: 0; color: var(--muted); font-size: .88rem; }
+    .pain-photo { height: 280px; }
 
     .offers { padding: 112px 0; }
     .offers-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 52px; }
@@ -198,6 +199,10 @@
     .offer-small:last-child { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 16px; background: #f2e4cf; }
     .offer-small:last-child h3 { margin-bottom: 0; }
     .offer-small:last-child p { max-width: 350px; }
+    .section-photo { position: relative; overflow: hidden; margin: 20px 0 0; border-radius: 26px; background: var(--sage); box-shadow: 12px 12px 24px rgba(80, 93, 64, .12), -8px -8px 18px rgba(255, 255, 255, .72); }
+    .section-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .offers-photo { height: 330px; }
+    .section-photo figcaption { position: absolute; right: 24px; bottom: 22px; max-width: 235px; padding: 13px 16px; color: var(--sage-dark); background: rgba(250, 240, 227, .92); font: 600 1.05rem/1.2 var(--secondary-font); }
 
     .how { position: relative; overflow: hidden; padding: 100px 0; color: var(--sage-dark); background: var(--paper); }
     .how::after { position: absolute; right: -100px; bottom: -170px; width: 470px; height: 350px; border-radius: 48% 52% 0 0; background: var(--terracotta); content: ""; opacity: .18; }
@@ -213,6 +218,7 @@
     .step-number { display: block; margin-bottom: 38px; color: var(--terracotta); font: 600 1.4rem var(--primary-font); }
     .step h3 { font-size: 2.15rem; }
     .step p { max-width: 270px; margin-bottom: 0; color: var(--sage-dark); font-size: .88rem; }
+    .how-photo { height: 360px; margin-top: 46px; }
 
     .waitlist { display: grid; grid-template-columns: 1fr .8fr; gap: 10vw; padding: 112px 0; border-bottom: 1px solid var(--line); }
     .waitlist h2 { max-width: 570px; }
@@ -232,6 +238,7 @@
     .quote:not(:first-child) blockquote { font-size: 1.2rem; }
     .quote footer { color: var(--muted); font-size: .75rem; }
     .quote footer strong { display: block; margin-bottom: 3px; color: var(--ink); font-weight: 600; }
+    .testimonials-photo { height: 300px; margin-top: 34px; }
 
 
     .final-cta { padding: 80px 0; color: var(--sage-dark); background: var(--cream); }
@@ -255,6 +262,7 @@
       .pain-item:nth-child(n + 3) { border-top: 1px solid var(--line); }
       .pain-item:nth-child(3) { padding-left: 0; }
       .offer-layout { grid-template-columns: 1fr; }
+      .offers-photo { height: 300px; }
       .how-intro, .offers-head, .testimonials-head, .final-cta-inner { align-items: start; flex-direction: column; }
       .steps { grid-template-columns: 1fr; }
       .step, .step + .step { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -292,6 +300,10 @@
       .offer-small { min-height: auto; padding: 24px; }
       .offer-small:last-child { display: flex; }
       .offer-small:last-child h3 { margin-bottom: 12px; }
+      .section-photo { border-radius: 20px; }
+      .offers-photo, .how-photo { height: 245px; }
+      .pain-photo, .testimonials-photo { height: 220px; }
+      .section-photo figcaption { right: 16px; bottom: 16px; max-width: 205px; padding: 11px 13px; font-size: .95rem; }
       .quote:first-child { grid-column: auto; }
       .quote, .quote:first-child { min-height: 250px; }
       .quote { padding: 24px; box-shadow: 7px 7px 15px rgba(80, 93, 64, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
@@ -338,7 +350,7 @@
         </div>
         <aside class="hero-aside" aria-label="Uma abordagem individual baseada nos doshas">
           <span class="hero-chip">Sua constituição importa</span>
-          <img class="hero-photo" src="218410191_353282052868629_3308944813035269456_n.jpg" alt="Carmen sorrindo e segurando um maço de aspargos">
+          <img class="hero-photo" src="IMG/hero-opcao-1.jpg" alt="Retrato de Carmen Medeiros">
           <div class="hero-note">
             <p>Nem sempre é falta de disciplina. Às vezes, é só uma rotina que não conversa com você.</p>
             <small>Uma abordagem individual baseada nos doshas e na sua Prakruti.</small>
@@ -365,6 +377,10 @@
           <article class="pain-item"><p>“Tenho tanta informação sobre saúde que fiquei sem saber em quem confiar.”</p></article>
           <article class="pain-item"><p>“Quero cuidar de mim sem transformar cada refeição em uma prova.”</p></article>
         </div>
+        <figure class="section-photo pain-photo">
+          <img src="IMG/secao-sinais.jpg" alt="Cena de rotina e bem-estar" loading="lazy" decoding="async">
+          <figcaption>Escutar os sinais também é uma forma de cuidado.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -388,6 +404,10 @@
             <article class="offer-small"><div><h3>Para começar hoje</h3><p>Prepare um Chai Indiano e experimente um pequeno ritual de presença.</p></div><a class="button button-quiet" href="https://docs.google.com/document/d/1vb4adVkkm36jr7URohzV7HXtxXqSRUnUgLnJ7C9iNTg/view">Ver receita</a></article>
           </div>
         </div>
+        <figure class="section-photo offers-photo">
+          <img src="IMG/secao-ofertas.jpg" alt="Cena do universo Carmen Ayurveda" loading="lazy" decoding="async">
+          <figcaption>Conhecimento que encontra espaço na vida real.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -402,6 +422,10 @@
           <article class="step"><span class="step-number">02</span><h3>Conversa no WhatsApp</h3><p>Compartilhe o que está vivendo e tire suas dúvidas antes de decidir qualquer próximo passo.</p></article>
           <article class="step"><span class="step-number">03</span><h3>Acompanhamento personalizado</h3><p>Se fizer sentido para você, construímos um cuidado que respeita seu momento e sua rotina.</p></article>
         </div>
+        <figure class="section-photo how-photo">
+          <img src="IMG/secao-processo.jpg" alt="Momento de cuidado e bem-estar" loading="lazy" decoding="async">
+          <figcaption>Um processo com mais presença e menos cobrança.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -419,6 +443,10 @@
           <article class="quote"><blockquote>“A conversa foi muito mais prática do que eu imaginava. Saí com duas mudanças possíveis e minha digestão já respondeu na primeira semana.”</blockquote><footer><strong>Luiza, 29</strong>Depois do questionário doshas</footer></article>
           <article class="quote"><blockquote>“Eu achava que precisava mudar tudo de uma vez. O acompanhamento me ajudou a criar um ritmo que consigo manter mesmo nos dias corridos.”</blockquote><footer><strong>Renata, 41</strong>Após 4 semanas de acompanhamento</footer></article>
         </div>
+        <figure class="section-photo testimonials-photo">
+          <img src="IMG/secao-depoimentos.jpg" alt="Imagem que representa uma rotina de autocuidado" loading="lazy" decoding="async">
+          <figcaption>Pequenos rituais, mudanças que ficam.</figcaption>
+        </figure>
       </div>
     </section>
 
