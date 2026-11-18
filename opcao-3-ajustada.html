@@ -79,6 +79,9 @@
     .signal small { color: var(--clay); font-size: .68rem; letter-spacing: .1em; }
     .signal p { margin: 0; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 500; line-height: 1.3; }
     .signal span:last-child { color: var(--sage); font-size: 1.35rem; text-align: right; }
+    .food-strip { position: relative; overflow: hidden; height: 300px; margin-top: 36px; border-radius: 3px; background: var(--sage-light); }
+    .food-strip img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .food-strip figcaption { position: absolute; right: 22px; bottom: 20px; max-width: 245px; padding: 13px 16px; color: var(--forest); background: rgba(247, 245, 237, .94); font: 400 1.1rem/1.18 var(--accent); }
 
     .offer { padding: 115px 0 126px; color: #f7f5ed; background: var(--forest-soft); }
     .offer-heading { display: flex; justify-content: space-between; gap: 50px; align-items: end; margin-bottom: 65px; }
@@ -100,6 +103,7 @@
     .dabba-art::before, .dabba-art::after { position: absolute; border: 1px solid rgba(63,85,72,.25); border-radius: 50%; content: ""; }
     .dabba-art::before { width: 420px; height: 420px; }
     .dabba-art::after { width: 320px; height: 320px; }
+    .dabba-art > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .spice-wheel { position: relative; z-index: 1; display: grid; width: 230px; height: 230px; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3,1fr); gap: 9px; transform: rotate(-8deg); }
     .spice-wheel span { border: 1px solid rgba(63,85,72,.35); border-radius: 50%; background: #a6ae94; }
     .spice-wheel span:nth-child(2), .spice-wheel span:nth-child(4), .spice-wheel span:nth-child(8) { background: #c68c65; }
@@ -167,6 +171,7 @@
       .cover-inner { grid-template-columns: 1fr .8fr; gap: 18px; padding-top: 145px; padding-bottom: 85px; }
       .cover h1 { font-size: clamp(4rem,10vw,6.3rem); }
       .portrait-wrap { height: 490px; margin-right: 10px; }
+      .food-strip { height: 260px; }
       .manifesto-grid, .signals-head, .journey-head { grid-template-columns: 1fr; gap: 26px; }
       .manifesto-bottom { margin-left: 0; }
       .offer-row { grid-template-columns: 1fr 1fr; }
@@ -192,6 +197,8 @@
       .cover h1 { max-width: 440px; font-size: clamp(4rem,17vw,5.7rem); }
       .cover h1 span { padding-left: .2em; }
       .cover-lede { max-width: 330px; font-size: .92rem; }
+      .food-strip { height: 220px; }
+      .food-strip figcaption { right: 14px; bottom: 14px; max-width: 200px; padding: 10px 12px; font-size: .98rem; }
       .portrait-wrap { justify-self: center; width: min(78%,320px); height: 390px; margin: 35px auto 20px; }
       .portrait-label { right: -22px; bottom: 18px; max-width: 160px; padding: 13px 15px; font-size: 1.2rem; }
       .cover-index { right: 12px; bottom: 20px; }
@@ -277,6 +284,10 @@
           <div class="signal"><small>05</small><p>Receber tanta informação que já não sabe em quem confiar.</p></div>
           <div class="signal"><small>06</small><p>Querer cuidar de si sem transformar cada refeição em prova.</p></div>
         </div>
+        <figure class="food-strip">
+          <img src="IMG/opcao-3-sinais.jpg" alt="Prato de arroz e legumes frescos" loading="lazy" decoding="async">
+          <figcaption>O cuidado começa no que cabe no seu dia.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -289,11 +300,15 @@
           <article class="offer-item"><b>03 / COTIDIANO</b><h3>Conteúdo que nutre</h3><p>Receitas, rituais e reflexões para levar o Ayurveda para além da teoria.</p></article>
         </div>
         <div class="offer-footer"><p>Para começar hoje: prepare um Chai Indiano e experimente um pequeno ritual de presença.</p><a class="pill" href="https://docs.google.com/document/d/1vb4adVkkm36jr7URohzV7HXtxXqSRUnUgLnJ7C9iNTg/view">Ver receita de Chai</a></div>
+        <figure class="food-strip">
+          <img src="IMG/opcao-3-ofertas.jpg" alt="Prato ayurvédico servido em tigela" loading="lazy" decoding="async">
+          <figcaption>Receitas, rituais e sabor para a vida real.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="dabba" id="masala-dabba">
-      <div class="dabba-art" aria-hidden="true"><div class="spice-wheel"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+      <div class="dabba-art"><img src="IMG/opcao-3-especiarias.jpg" alt="Especiarias organizadas em um masala dabba" loading="lazy" decoding="async"></div>
       <div class="dabba-copy"><span class="section-number">Da cozinha para a vida</span><h2>Masala Dabba.</h2><p>Masala Dabba — ou simplesmente dabba — é a tradicional caixa indiana de especiarias. Na cozinha ayurvédica, elas não servem apenas para dar sabor: fazem parte do cuidado cotidiano com a digestão, a imunidade e o equilíbrio dos doshas — Vata, Pitta e Kapha.</p><p>Uma forma prática de aproximar a antiga ciência da vida da rotina, com escolhas conscientes e saborosas.</p><a class="pill" href="https://drive.google.com/file/d/1XdP7a4w418SlidYf9sZKCiC2UJrN8Bq4/view?usp=drivesdk" target="_blank" rel="noopener">Assistir ao vídeo</a></div>
     </section>
 

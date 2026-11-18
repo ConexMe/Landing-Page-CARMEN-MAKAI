@@ -198,6 +198,9 @@
     .offer-small:last-child { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 16px; background: #f2e4cf; }
     .offer-small:last-child h3 { margin-bottom: 0; }
     .offer-small:last-child p { max-width: 350px; }
+    .food-strip { position: relative; overflow: hidden; height: 290px; margin-top: 24px; border-radius: 26px; background: var(--sage); box-shadow: 12px 12px 24px rgba(80, 93, 64, .12), -8px -8px 18px rgba(255, 255, 255, .72); }
+    .food-strip img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .food-strip figcaption { position: absolute; right: 22px; bottom: 20px; max-width: 230px; padding: 12px 15px; color: var(--sage-dark); background: rgba(250, 240, 227, .94); font: 600 1rem/1.2 var(--secondary-font); }
 
     .how { position: relative; overflow: hidden; padding: 100px 0; color: var(--sage-dark); background: var(--paper); }
     .how::after { position: absolute; right: -100px; bottom: -170px; width: 470px; height: 350px; border-radius: 48% 52% 0 0; background: var(--terracotta); content: ""; opacity: .18; }
@@ -225,6 +228,7 @@
     .dabba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: center; }
     .dabba-copy p { max-width: 560px; color: var(--muted); }
     .dabba-card { padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: var(--cream); box-shadow: 10px 10px 22px rgba(80, 93, 64, .09), -8px -8px 18px rgba(255, 255, 255, .75); }
+    .dabba-card img { display: block; width: 100%; height: 175px; margin: -12px 0 24px; border-radius: 14px; object-fit: cover; }
     .dabba-card h3 { font-size: 1.45rem; }
     .dabba-card p { margin-bottom: 22px; font-size: .9rem; }
     .media-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -262,6 +266,7 @@
       .pain-item:nth-child(n + 3) { border-top: 1px solid var(--line); }
       .pain-item:nth-child(3) { padding-left: 0; }
       .offer-layout { grid-template-columns: 1fr; }
+      .food-strip { height: 250px; }
       .how-intro, .offers-head, .testimonials-head, .final-cta-inner { align-items: start; flex-direction: column; }
       .steps { grid-template-columns: 1fr; }
       .step, .step + .step { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -301,6 +306,8 @@
       .offer-small { min-height: auto; padding: 24px; }
       .offer-small:last-child { display: flex; }
       .offer-small:last-child h3 { margin-bottom: 12px; }
+      .food-strip { height: 210px; border-radius: 20px; }
+      .food-strip figcaption { right: 14px; bottom: 14px; max-width: 195px; padding: 10px 12px; font-size: .92rem; }
       .quote:first-child { grid-column: auto; }
       .quote, .quote:first-child { min-height: 250px; }
       .quote { padding: 24px; box-shadow: 7px 7px 15px rgba(80, 93, 64, .08), -6px -6px 14px rgba(255, 255, 255, .7); }
@@ -374,6 +381,10 @@
           <article class="pain-item"><p>“Tenho tanta informação sobre saúde que fiquei sem saber em quem confiar.”</p></article>
           <article class="pain-item"><p>“Quero cuidar de mim sem transformar cada refeição em uma prova.”</p></article>
         </div>
+        <figure class="food-strip">
+          <img src="IMG/opcao-2-sinais.jpg" alt="Sementes de cardamomo usadas na culinária ayurvédica" loading="lazy" decoding="async">
+          <figcaption>Pequenos ingredientes, escolhas cheias de intenção.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -397,6 +408,10 @@
             <article class="offer-small"><div><h3>Para começar hoje</h3><p>Prepare um Chai Indiano e experimente um pequeno ritual de presença.</p></div><a class="button button-quiet" href="https://docs.google.com/document/d/1vb4adVkkm36jr7URohzV7HXtxXqSRUnUgLnJ7C9iNTg/view">Ver receita</a></article>
           </div>
         </div>
+        <figure class="food-strip">
+          <img src="IMG/opcao-2-ofertas.jpg" alt="Prato colorido preparado com ingredientes frescos" loading="lazy" decoding="async">
+          <figcaption>Comida que nutre também pode ser simples.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -409,6 +424,7 @@
           <p>Uma forma prática de levar a antiga ciência da vida para a rotina, com escolhas que respeitam cada pessoa.</p>
         </div>
         <aside class="dabba-card">
+          <img src="IMG/opcao-2-especiarias.jpg" alt="Masala dabba com especiarias indianas" loading="lazy" decoding="async">
           <h3>A cozinha como primeira linha de cuidado</h3>
           <p>Conheça as especiarias e descubra como elas participam de uma alimentação mais consciente e saborosa.</p>
           <a class="button button-primary" href="https://drive.google.com/file/d/1XdP7a4w418SlidYf9sZKCiC2UJrN8Bq4/view?usp=drivesdk" target="_blank" rel="noopener">Assistir ao vídeo</a>
